@@ -1,14 +1,15 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    
-    <html language="en">
-    
+
     <title>Error-Filled Page</title>
+
+</head>
     
 <body>
-    <h1>Welcome to My Error-Filled Page
+    <h1>Welcome to My Error-Filled Page</h1>
     
-    This is a paragraph with mismatched tags and missing closing tags.</p>
+    <p>This is a paragraph with mismatched tags and missing closing tags.</p>
     
     <ol>
         <li>Item 1</li>
@@ -21,13 +22,13 @@
         <li>Item 8</li>
         <li>Item 9</li>
         <li>Item 10</li>
-    </ul>
+    </ol>
 
-    <p>This is another paragraph without proper indentation.
+    <p>This is another paragraph without proper indentation.</p>
     
-    <img src="image.jpg">
+    <aside><img src="image.jpg" alt="Image"></aside>
 
-    <a href="https://www.example.com" target="_blank">Click me!</img>
+    <a href="https://www.example.com" target="_blank">Click me!</a>
 
     <table>
         <tr>
@@ -36,30 +37,51 @@
         </tr>
         <tr>
             <td>John</td>
-            <td>25<td>
+            <td>25</td>
         </tr>
         <tr>
             <td>Jane</td>
             <td>30</td>
         </tr>
+    </table>
     
-    <img source="error.jpeg" alt="Error Image">
+    <img src="error.jpeg" alt="Error Image">
 
-    <center>This is centered text.</center>
+    <div style="text-align: center;">This is centered text.</div>
 
-    <p bgcolor="lightgray">Text</p>
+    <p style="background-color: lightgray;">Text</p>
 
     <input type="button" value="Click me">
 
-    <!-- This is an unclosed comment
+    <!-- This is an unclosed comment -->
+    
 
-    <a href="#">Link without closing tag
+    <a href="#">Link without closing tag</a>
 
-    <p><em>Underlined text</p></em>
+    <p><em>Underlined text</em></p>
 
     <dl>
-        <li>Descriptive Item Title</li>
-        <li>Descriptive Item Text</li>
+        <li>Error 1: No doc type was specified at the beginning of the code. I fixed this by adding "<!DOCTYPE html>" at the very beginning </li>
+        <li>Error 2: html language (<html language="en">) not stated at beginning of code, instead it was in the head of the code. I fixed this by adding it right after stating the doc type, 
+        and took it out of the header. </li>
+        <li>Error 3: I changed language to lang </li>
+        <li>Error 4: Line two originally just had the html tag, i took this out after putting the "<html language="en">" in the beginning of the code. </li>
+        <li>Error 5: the head tag was not properly closed, i closed it after the title line of code. </li>
+        <li>Error 6: Line 10 was missing an end to the h1 tag, so i added an /h1 to the end of the line of code. </li>
+        <li>Error 7: Line 12 was missing a starting p tag to i added one to the begininning of the line of code. </li>
+        <li>Error 8: Line 14 starts with ol tag and ends on line 25 with a /ul, i changed the ul to an ol. </li>
+        <li>Error 9: Line 27 has no ending p tag, so i added a /p at the end of this line of code. </li>
+        <li>Error 10: Line 29 is referancing an image and is missing the "aside" tag, so i added that to the beginning and the ending tag to the end of the line of code. </li>
+        <li>Error 11: Line 29 is missing the alt attribute, i added the alt attribute after the img source was stated. </li>
+        <li>Error 12: Line 31 has a clickable link but uses an ending image tag instead of an a tag, so i changed the end tag to </a> </li>
+        <li>Error 13: td tag not properly closed in second row of the table. I added a closed td tag. </li>
+        <li>Error 14: table is not closed with a closing table tag, so i added a closing table tag. </li>
+        <li>Error 15: Line 47 has img source instead of img src, i changed source to src. </li>
+        <li>Error 16: replaced the center tag in line 49 with a "div" tag and added "text-align :center;" and an end div tag </li>
+        <li>Error 17: Line 51 has "bgcolor" after the p tag, changed bgcolor to "style="background-color: lightgray;"" </li>
+        <li>Error 18: Comment is not closed in line 55, so i properly closed the comment. </li>
+        <li>Error 19: Line 58 doesnt have a closing tag, so i added a closing tag </a> </li>
+        <li>Error 20: Line 68 has mismatched closing tags, so i corrected the closing tags. </li>
     </dl>
 </body>
 </html>
