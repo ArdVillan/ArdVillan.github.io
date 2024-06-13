@@ -1,0 +1,58 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-family: sans-serif;
+  }
+  
+  body {
+    margin: 0;
+    background: #ccc;
+    background: white no-repeat fixed center;
+
+  }
+  
+  article {
+    width: 210mm;
+    height: 297mm;
+    margin: 20px auto;
+    position: relative;
+    background: white; /* Adding white background color to the letter */
+  border-top: 1mm solid #888; /* Top border with 1mm solid line in #888 color */
+  border-bottom: 1mm solid #888; /* Bottom border with 1mm solid line in #888 color */
+  box-sizing: border-box; /* Ensure borders are included in the element's dimensions */
+  padding-top: 1mm; /* Ensure content does not touch the border */
+  padding-bottom: 1mm;
+    background:
+    url("https://raw.githubusercontent.com/mdn/learning-area/master/css/styling-boxes/letterheaded-paper-start/top-image.png") top center no-repeat,
+    url("https://raw.githubusercontent.com/mdn/learning-area/master/css/styling-boxes/letterheaded-paper-start/bottom-image.png") bottom center no-repeat,
+    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0)) top center / 100% 40% no-repeat,
+    linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3)) bottom center / 100% 40% no-repeat;
+  background-attachment: not-fixed;
+  }
+  
+  address {
+    position: absolute;
+    bottom: 8mm;
+    right: 20mm;
+  }
+  
+  h1 {
+    position: absolute;
+    top: 12mm;
+    left: 20mm;
+    width: 128px;
+    height: 128px;
+    font-size: 20px;
+    letter-spacing: 1px;
+    text-align: center;
+    padding: 44px 0;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+    background:
+    url("https://raw.githubusercontent.com/mdn/learning-area/master/css/styling-boxes/letterheaded-paper-start/logo.png") top left no-repeat;
+    filter: drop-shadow(2px 2px 4px black);
+  }
+  
+  /* Your CSS below here */
