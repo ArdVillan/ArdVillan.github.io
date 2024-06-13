@@ -59,18 +59,17 @@ html {
 .card2 article img{
   max-height: 100%;
   max-width: 40%;
-    float: right;
+  float: right;
 }
 
 .headandfoot{
   height: 3em;
-  padding:1em;
+  padding: 1em;
 }
 
 .headandfoot2{
   height: 3em;
-  padding:1em;
-  
+  padding: 1em;
 }
 
 h2{
