@@ -1,0 +1,40 @@
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.parent {
+    position: relative;
+    width: 100%; /* Ensure full width */
+    height: 100%; /* Ensure full height */
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the entire div */
+    z-index: 1; /* Ensure background is behind scoreboard */
+}
+
+.rpdr {
+    position: absolute;
+    top: 20px; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
+    z-index: 3; /* Ensure logo is above background and scoreboard */
+    max-width: 200px; /* Double the original size */
+}
+
+.scoreboard {
+    position: absolute;
+    bottom: 10px; /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2; /* Ensure scoreboard is above background */
+    max-width: 80%; /* Adjust max-width as needed */
+}
+
