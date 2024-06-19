@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="ica7.css" rel="stylesheet">
+    <title>Just a little Touchy</title>
+    <style>
+        body{
+            background-color: khaki;
+        }
+        #box1{
+            width: 25vw;
+            height: 20vh;
+            background-color: indianred;
+        }
+        
+        #box1:hover{
+            background-color: purple;
+        }
+
+        #box2{
+            width: 25vw;
+            height:20vh;
+            position: relative;
+            background-color: orangered;
+            animation-name: box2move;
+            animation-duration: 6s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes box2move{
+            from{
+                margin: 0;
+            }
+
+            25%{
+                margin-left: 70%;
+                margin-top: 0%;
+            }
+
+            50%{
+                margin-left: 70%;
+                margin-top: 50%;
+            }
+
+            75%{
+                margin-left: 0%;
+                margin-top: 50%;
+            }
+
+            to{
+                margin: 0;
+            }
+        }
+     </style
+</head>
+<body>
+    <div id="box1">
+        <p>
+            Make me turn purple when hovered.
+        </p>
+    </div>
+
+    <div id="box2">
+        <p>
+            Make me move around.
+        </p>
+    </div>
+
+</body>
+</html>
