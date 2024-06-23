@@ -10,16 +10,36 @@
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0;
+            background-color: #dbe2a1;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
         }
+        .back-to-top {
+            display: block;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            border: none;
+            outline: none;
+            background-color: #d3d58e; /* Blue background color */
+            color: rgb(0, 0, 0);
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 4px;
+            font-size: 16px;
+            text-decoration: none; /* Remove default underline */
+        }
+
+        .back-to-top:hover {
+            background-color: #c2c043; /* Darker blue on hover */
+        }
         .container {
             width: 90%;
             max-width: 1200px;
-            background-color: #9d95de;
+            background-color: #dfe3bd;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -30,17 +50,17 @@
              grid-auto-flow: row;
         }
         .event {
-            background-color: #e3c85b;
+            background-color: #c2c0e2;
             padding: 15px;
             border-radius: 8px;
             width: 100%; /* Ensure each event takes full width of its container */
             box-sizing: border-box;
         }
         .event:nth-child(even) {
-            background-color: #d88383; /* Alternate background color */
+            background-color: #c7a6a3; /* Alternate background color */
         }
         .event h2 {
-            font-size: 1.2rem;
+            font-size: 1.75rem;
             margin-bottom: 10px;
             color: #1c1e3d;
         }
@@ -83,9 +103,82 @@
                 display: none;
             }
         }
+        .event p {
+            font-size: 1rem;
+            color: #363660;
+            margin-bottom: 5px;
+        }
+
+        .event p:nth-of-type(1) {
+            font-weight: bold; /* Add this line to make the dates bold */
+        }
+
+        .event p:nth-of-type(2) {
+            color:#454355 /* Add this line to make the dates bold */
+        }
+
+        @media (max-width: 768px) {
+            body {
+                font-size: 16px; /* Adjust as needed */
+            }
+            .event h2 {
+                font-size: 1.5rem; /* Decrease header size for better proportion */
+            }
+            .event p {
+                font-size: 0.9rem; /* Increase paragraph font size */
+            }
+        }
+        @media (max-width: 768px) {
+            .schedule {
+                grid-template-columns: 1fr; /* Single column layout on mobile */
+            }
+            .event {
+                width: 100%; /*    Ensure events take full width */
+            }
+        }
+
+        .event {
+            opacity: 0;
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+                h1, h2, h3 {
+            transition: color 0.3s ease;
+        }
+
+        .event:nth-child(even) h2:hover {
+            color: #833c3c; /* Change text color on hover for even-numbered events */
+        }
+
+        .event:nth-child(odd) h2:hover {
+            color: #4a468f; /* Change text color on hover for odd-numbered events */
+        }
+
+        .event {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease-in;
+        }
+
+        .event:hover {
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.6); /* Increase shadow size on hover */
+        }
+
+        
+
     </style>
 </head>
-<body>
+<body id="top">
+    <div id="top"></div>
     <div class="container">
         <h1 style="text-align: center; color: #333;">Colorado Symphony Concert Schedule 2022-2023</h1>
         <p style="text-align: center; color: #333; font-size: 1.1rem; margin-bottom: 20px;">
@@ -116,10 +209,10 @@
                     Among today’s best and brightest composers, Jessie Montgomery’s Strum draws on the spirit of dance,
                     movement, and American folk expressions in an ecstatic celebration that will have you on the edge of
                     your seat.</p>
-                <p>Featuring Artists: <br>
+                <p><strong>Featuring Artists:</strong> <br>
                     Aram Demirjian<br> 
                     Paul Huang</p>
-                <p>Repertoire: <br>
+                <p><strong>Repertoire:</strong> <br>
                     JESSIE MONTGOMERY  Strum<br>
                     VIVALDI The Four Seasons, Op. 8, No. 1-4<br>
                     TCHAIKOVSKY Symphony No. 4 in F minor, Op. 36</p>
@@ -139,12 +232,12 @@
                     marriage of music and text, with Williams ’inspired music perfectly encapsulating Whitman’s noble,
                     humanistic aspirations. These works will spring to life in the hands of Maestro Peter Oundjian and your
                     Colorado Symphony.</p>
-                <p>Featuring Artists: <br>
+                <p><strong>Featuring Artists:</strong> <br>
                     Peter Oundjian, conductor<br>
                     Sterling Elliott, cello<br>
                     Colorado Symphony Chorus<br>
                     Duain Wolfe, director</p>
-                <p>Repertoire: <br>
+                <p><strong>Repertoire:</strong> <br>
                     VAUGHAN WILLIAMS Toward the Unknown Region<br>
                     ELGAR Cello Concerto in E minor, Op. 85<br>
                     BEETHOVEN Symphony No. 3 in E-flat major, Op. 55 “Eroica”</p>
@@ -163,10 +256,10 @@
                     Symphony. Written to symbolize the power of the people, Shostakovich employs memorable themes and
                     complex orchestrations that mirror his own battles against Soviet oppression. Ending on a triumphant
                     note, this is a finale that will leave you breathless.</p>
-                <p>Featuring Artists: <br>
+                <p><strong>Featuring Artists: </strong><br>
                     Christian Reif,conductor<br>
                     Olga Kern, piano</p>
-                <p>Repertoire: <br>
+                <p><strong>Repertoire:</strong> <br>
                     TCHAIKOVSKY Piano Concerto No. 1 in B-flat major<br>
                      Op. 23, SHOSTAKOVICH Symphony No. 10 in E minor, Op. 93</p>
             </div>
@@ -184,12 +277,12 @@
                 program opens with Lili Boulanger’s D’un matin de printemps, meaning ‘On a spring morning,’ capturing the genius of 
                 this prodigious composer who wrote over 50 compositions before tragically passing at the age of just 24. This sweet 
                 and playful ode to spring is just the transportive overture to carry away your winter doldrums.</p>
-                <p>Featuring Artists: <br>
+                <p><strong>Featuring Artists:</strong> <br>
                     Kevin John Edusei, conductor<br>
                     Yumi Hwang-Williams, violin<br>
                     Colorado Symphony Chorus<br>
                     Duain Wolfe director</p>
-                <p>Repertoire: <br>
+                <p><strong>Repertoire: </strong><br>
                     BOULANGER D'un matin de printemps<br> 
                     SZYMANOWSKI Violin Concerto No. 1 Op. 35<br>
                     RAVEL Daphnis et Chloé</p>
@@ -209,7 +302,7 @@
                     marriage of music and text, with Williams ’inspired music perfectly encapsulating Whitman’s noble,
                     humanistic aspirations. These works will spring to life in the hands of Maestro Peter Oundjian and your
                     Colorado Symphony.</p>
-                <p>Featuring Artists: <br>
+                <p><strong>Featuring Artists: </strong><br>
                     Christopher Dragon<br>
                      Colorado Symphony Horn Section: <br>
                     Michael Thornton<br>
@@ -217,7 +310,7 @@
                     Carolyn Kunicki<br>
                     Matt Eckenhoff
                 </p>
-                <p>Repertoire: <br>
+                <p><strong>Repertoire:</strong> <br>
                     HAYDN Symphony No. 45 in F-sharp minor, “Farewell"<br>
                      R. SCHUMANN Konzertstück for 4 Horns and Orchestra in F major, Op. 86<br>
                      BEETHOVEN Symphony No. 8 in F major, Op. 93</p>
@@ -236,10 +329,11 @@
                     wrote that he “conceived of it as glorifying the grandeur of the human spirit, praising the free and happy
                     man— his strength, his generosity, and the purity of his soul." This heroic and joyous work offers a
                     brilliant conclusion to a performance of energizing masterworks.</p>
-                <p>Featuring Artists: <br>
+                <p><strong>Featuring Artists:</strong> <br>
                     Teddy Abrams, conductor<br>
                     Stewart Goodyear, piano</p>
-                <p>Repertoire:<br> PERKINSON Worship: A Concert Overture<br> 
+                <p><strong>Repertoire:</strong><br> 
+                    PERKINSON Worship: A Concert Overture<br> 
                     BEETHOVEN Piano Concerto No. 5 in E-flat major, Op. 73, “Emperor" <br> 
                     PROKOFIEV Symphony No. 5 in B-flat major, Op. 100</p>
             </div>
@@ -255,11 +349,11 @@
                     preeminent composers of our time. Bartók’s Concerto for Orchestra was called a concerto rather than a
                     symphony as each section of instruments is treated in a soloistic and virtuosic way, combining elements
                     of Western art music and Hungarian folk songs in a stirring finale to an evening of symphonic sublimity.</p>
-                <p>Featuring Artists: <br>
+                <p><strong>Featuring Artists:</strong> <br>
                     Alexander Shelley, conductor<br>
                     Pablo Sainz Villegas, guitar<br>
                     </p>
-                <p>Repertoire: <br>
+                <p><strong>Repertoire: </strong><br>
                     ANNA CLYNE  This Midnight Hour<br>
                     RODRIGO  Concierto de Aranjuez<br>
                     BARTÓK  Concerto for Orchestra<br>
@@ -283,13 +377,13 @@
                     instrument and its call as a leitmotif throughout the overture, unleashing an exuberant conversation
                     between instrumental voices and concluding with a virtuosic flourish conducted by Maestro
                     Peter Oundjian.</p>
-                <p>Featuring Artists: <br>
+                <p><strong>Featuring Artists: </strong><br>
                     Peter Oundjian, conductor<br>
                     Colorado Symphony Chorus, Duain Wolfe, director<br>
                     Karina Gauvin, soprano<br>
                     Joshua Hopkins, baritone<br>
                     </p>
-                <p>Repertoire: <br>
+                <p><strong>Repertoire: </strong><br>
                     WEBER  Oberon: Overture, J. 306<br>
                     RAVEL  Shéhérazade<br>
                     BRAHMS  Ein deutsches Requiem, Op. 45<br>
@@ -308,16 +402,18 @@
                     work that is epic in scope and scale, with knowing nods to Beethoven’s Third Symphony and Wagner’s
                     Ring Cycle, including his use of the famous Wagner tubas. This revered work caps an awe-inspiring
                     program of inspiring masterworks led by Maestro Oundjian.</p>
-                <p>Featuring Artists: <br>
+                <p><strong>Featuring Artists:</strong> <br>
                     Peter Oundjian, conductor<br>
                     James Ehnes, violin<br>
                     </p>
-                <p>Repertoire: <br>
+                <p><strong>Repertoire:</strong> <br>
                     BEETHOVEN  Violin Concerto in D major, Op. 61<br>
                     BRUCKNER  Symphony No. 7 in E major, WAB 107<br>
                     </p>
             </div>
         </div>
     </div>
+    <a href="#top" class="back-to-top">Back to Top</a>
+
 </body>
 </html>
