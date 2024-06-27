@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Elements Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: lightblue;
+            margin: 20px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .box:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>Interactive Elements Examples!</h1>
+
+    <div class="box" id="box1">
+        Click me to change color!
+    </div>
+
+    <div class="box" id="box2">
+        Click me to change text!
+    </div>
+
+    <script>
+        // Event listener for changing color
+        document.getElementById('box1').addEventListener('click', function() {
+            var randomColor = '#' + Math.floor(Math.random()*16777215).toString(16); // Generates random color
+            this.style.backgroundColor = randomColor; // Applies random color to the box
+        });
+
+        // Event listener for changing text
+        document.getElementById('box2').addEventListener('click', function() {
+            this.textContent = "Text changed!";
+        });
+        document.getElementById('box2').addEventListener('click', function() {
+            this.textContent = "Hello!";
+        });
+    </script>
+</body>
+</html>
