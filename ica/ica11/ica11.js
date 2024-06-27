@@ -35,4 +35,7 @@ function displayMessage(msgText, msgType) {
 const actionButton = document.getElementById("actionButton");
 actionButton.addEventListener("click", () => {
   displayMessage("Another day, another slay.", "chat");
-  d
+  displayMessage("Slay the day away, Queen!", "warning");
+
+});
+
