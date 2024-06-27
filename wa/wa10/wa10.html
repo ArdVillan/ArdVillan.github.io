@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+
+  <title>Silly story generator</title>
+
+  <style>
+    body {
+      font-family: helvetica, sans-serif;
+      width: 350px;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    div {
+      padding-bottom: 20px;
+    }
+
+    input[type="text"] {
+      padding: 5px;
+      width: 150px;
+    }
+
+    p {
+      background: #ffc125;
+      color: #5e2612;
+      padding: 10px;
+      visibility: hidden;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <label for="customname">Enter custom name:</label>
+    <input id="customname" type="text" placeholder="" />
+  </div>
+  <div>
+    <label for="us">US</label>
+    <input id="us" type="radio" name="ukus" value="us" checked />
+    <label for="uk">UK</label>
+    <input id="uk" type="radio" name="ukus" value="uk" />
+  </div>
+  <div>
+    <button class="randomize">Generate random story</button>
+  </div>
+  <p class="story"></p>
+
+  <script>
+    // Function to generate a random number in a range
+    function randomInRange(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    // Function to get a random value from an array
+    function randomValueFromArray(array) {
+      return array[randomInRange(0, array.length - 1)];
+    }
+
+    // Function to generate a random silly story
+    function generateStory() {
+      // Story templates
+      var storyTemplates = [
+        "Once upon a time, there was a [customname] who liked to eat [food].",
+        "[customname] woke up and found a [animal] in their bed.",
+        "In a land far away, [customname] found a treasure chest full of [object].",
+        "In a crazy universe, [customname] went through a tiny door in thier home and on the other side they found a [animal].",
+        "[customname] went to school one day and in the seat next to them was a [animal]."
+      ];
+
+      // Arrays of silly items
+      var foodItems = ["pizza", "ice cream", "chocolate"];
+      var animalItems = ["unicorn", "dragon", "yeti", "whale", "elephant"];
+      var objectItems = ["gold coins", "magic potions", "enchanted swords"];
+
+      // Get user input
+      var customName = document.getElementById("customname").value.trim();
+      var isUK = document.getElementById("uk").checked;
+
+      // Select a random story template
+      var randomIndex = randomInRange(0, storyTemplates.length - 1);
+      var storyTemplate = storyTemplates[randomIndex];
+
+      // Replace placeholders with random items
+      var foodItem = randomValueFromArray(foodItems);
+      var animalItem = randomValueFromArray(animalItems);
+      var objectItem = randomValueFromArray(objectItems);
+
+      storyTemplate = storyTemplate.replace("[customname]", customName || "Bob")
+                                   .replace("[food]", foodItem)
+                                   .replace("[animal]", animalItem)
+                                   .replace("[object]", objectItem);
+
+      // If UK is checked, convert terms
+      if (isUK) {
+        // Perform UK conversions here if needed
+        // Example: You can modify the storyTemplate further for UK-specific terms
+        storyTemplate = storyTemplate.replace("liked to eat", "enjoyed having")
+                                     .replace("woke up and found a", "was surprised by the appearance of a");
+      }
+
+      // Display the generated story
+      var storyElement = document.querySelector(".story");
+      storyElement.textContent = storyTemplate;
+      storyElement.style.visibility = "visible";
+    }
+
+    // Event listener for the "Generate random story" button
+    document.querySelector(".randomize").addEventListener("click", generateStory);
+  </script>
+</body>
+</html>
