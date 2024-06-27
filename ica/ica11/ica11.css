@@ -1,0 +1,24 @@
+/* Example styles for the message box */
+body{
+    background-color: rgb(250, 255, 196);
+}
+
+.msgBox {
+    width: 200px;
+    padding: 10px;
+    background-color: #d6e69c;
+    border: 1px solid #d35757;
+    text-align: center;
+    margin: 20px auto;
+  }
+  
+  .msgBox p {
+    font-size: 16px;
+  }
+  
+  .msgBox button {
+    background-color: #dfa0a0;
+    border: none;
+    cursor: pointer;
+  }
+  
