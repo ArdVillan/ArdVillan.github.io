@@ -5,8 +5,8 @@ const btn = document.querySelector('button');
 const overlay = document.querySelector('.overlay');
 
 // Images and their alternative texts
-const images = ['pic1.jpg', 'pic2.jpg', 'pic3.jpg', 'pic4.jpg', 'pic5.jpg'];
-const altTexts = {
+const imageArray = ['pic1.jpg', 'pic2.jpg', 'pic3.jpg', 'pic4.jpg', 'pic5.jpg'];
+const imageAltText = {
     'pic1.jpg': 'waterfall',
     'pic2.jpg': 'sunset',
     'pic3.jpg': 'creek',
@@ -15,25 +15,32 @@ const altTexts = {
 };
 
 // Adding images to thumb-bar and setting up click functionality
-images.forEach((image) => {
+/* Looping through the images */
+for(let i = 0; i < imageArray.length; i++) {
     const newImage = document.createElement('img');
-    newImage.setAttribute('src', image);
-    newImage.setAttribute('alt', altTexts[image]);
+    newImage.setAttribute('src', imageArray[i]);
+    newImage.setAttribute('alt', imageAltText[imageArray[i]]);
     thumbBar.appendChild(newImage);
-
-    newImage.addEventListener('click', () => {
-        displayedImage.src = newImage.src;
-        displayedImage.alt = newImage.alt;
-    });
-});
-
-// Darken/Lighten button
-btn.addEventListener('click', () => {
-    if (overlay.style.backgroundColor === 'rgba(0,0,0,0.5)') {
-        overlay.style.backgroundColor = 'transparent';
-        btn.textContent = 'Darken';
+  
+    /* Adding a click event listener to each thumbnail image */
+    newImage.addEventListener('click', (function(index) {
+      return function() {
+        displayedImage.setAttribute('src', imageArray[index]);
+        displayedImage.setAttribute('alt', imageAltText[imageArray[index]]);
+      }
+    })(i));
+  }
+  
+  /* Writing a handler that runs the darken/lighten button */
+  btn.addEventListener('click', function() {
+    const currentClass = btn.getAttribute('class');
+    if(currentClass === 'dark') {
+      btn.setAttribute('class', 'light');
+      btn.textContent = 'Lighten';
+      overlay.style.backgroundColor = 'rgba(0,0,0,0.5)';
     } else {
-        overlay.style.backgroundColor = 'rgba(0,0,0,0.5)';
-        btn.textContent = 'Lighten';
+      btn.setAttribute('class', 'dark');
+      btn.textContent = 'Darken';
+      overlay.style.backgroundColor = 'rgba(0,0,0,0)';
     }
-});
+  });
