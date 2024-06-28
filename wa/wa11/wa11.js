@@ -14,4 +14,26 @@ const altTexts = {
     'pic5.jpg': 'flatirons'
 };
 
-// Adding images to thumb-bar and setting up click funct
+// Adding images to thumb-bar and setting up click functionality
+images.forEach((image) => {
+    const newImage = document.createElement('img');
+    newImage.setAttribute('src', image);
+    newImage.setAttribute('alt', altTexts[image]);
+    thumbBar.appendChild(newImage);
+
+    newImage.addEventListener('click', () => {
+        displayedImage.src = newImage.src;
+        displayedImage.alt = newImage.alt;
+    });
+});
+
+// Darken/Lighten button
+btn.addEventListener('click', () => {
+    if (overlay.style.backgroundColor === 'rgba(0,0,0,0.5)') {
+        overlay.style.backgroundColor = 'transparent';
+        btn.textContent = 'Darken';
+    } else {
+        overlay.style.backgroundColor = 'rgba(0,0,0,0.5)';
+        btn.textContent = 'Lighten';
+    }
+});
