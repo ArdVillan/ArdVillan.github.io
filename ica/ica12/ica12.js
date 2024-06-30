@@ -34,4 +34,8 @@ function clearAnswer() {
 }
 
 function revealAnswer() {
-    const answerText = document.q
+    const answerText = document.querySelector("#js-answer-text");
+    answerText.textContent = currentAnswer;
+}
+
+getQuote();
