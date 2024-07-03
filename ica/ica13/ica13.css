@@ -1,0 +1,18 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Avoid scrollbars */
+}
+
+canvas {
+    display: block; /* Remove default margin */
+    background: #000; /* Optional: Adds a background color to the canvas */
+}
+
+h1 {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: white;
+    z-index: 10;
+}
