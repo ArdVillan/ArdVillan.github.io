@@ -1,9 +1,56 @@
+#phoneNumberDisplay span {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  border: 1px solid #ddd;
+  margin: 2px;
+  font-weight: bold;
+}
+
+#phoneNumberDisplay .active {
+  border-bottom: 3px solid rgb(102, 0, 255); /* Underline the active digit */
+  color: rgb(0, 8, 255); /* Optionally change the color to indicate activity */
+}
+
+h2{
+  font-size: medium;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #5bd15f;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
 body {
-    font-family: 'Helvetica', sans-serif;
-    line-height: 1.6;
-    background-color: #ebf0af;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-  }
+  font-family: 'Helvetica', sans-serif;
+  line-height: 1.6;
+  background-color: #ebf0af;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+#restartButton {
+  background-color: #f47c36; /* Red color for the restart button */
+  color: white;
+}
+
+#restartButton:hover {
+  background-color: #d32f2f;
+}
+
